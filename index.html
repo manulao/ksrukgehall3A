@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="theme-color" content="#ffffff">
+	<meta name="viewport" content="width=device-width"/>
+	<title>Kickstarter UK Games Expo Hall 3A</title>
+	<link rel="stylesheet" href="styles.css"> <!-- Conexión con el archivo CSS -->
+	<style>
+		.tooltip {
+			border:2px solid #f7eed7;
+			border-radius:4px;
+			padding:10px;
+			margin-bottom:10px;
+			margin-left:0px;
+			background-color:#f7eed7;
+			font:12px Verdana;
+			line-height:18px;
+			box-shadow: 0px 3px 10px grey;
+		}
+			a {
+				cursor:pointer;
+				color:blue;
+				text-align: center
+			}
+			a:hover {
+				color:black;
+			}
+			label {
+				display:inline-block;
+				width:250px;
+				text-align:right;
+				padding:5px;
+			}
+			a:link {
+				color:blue;
+				text-decoration: underline;
+			}
+	</style>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.imagemapster.min.js"></script>
+	<script type="text/javascript">
+				$(document).ready(function() {
+				$('img').mapster({
+				fillOpacity: 0.5,
+				render_highlight: {
+					fillColor: 'f7eed7',
+					stroke: true,
+					strokeColor: 'f7eed7'
+				},
+				clickNavigate: true,
+				fadeInterval: 50,
+				showToolTip: true,
+				onClick: function (e) {
+					$('#coordinateslabel').hide();
+					$('#deletelabel').show();
+					var thisId = e.key;
+					thisId = thisId.replace('game-', '');
+					$('#existing').val(thisId);
+					console.log($('#existing').val());
+					$('#game').val(thisId);
+					$('#description').val($('#hd'+thisId).val());
+				},
+				toolTipContainer: '<div class="tooltip" style="text-align:left;max-width:200px;"></div>',
+				mapKey: 'data-key',
+				});
+			});
+		var width = 3425;
+		var height = 2412;
+		var multiplier = 2;
+		function smaller(){
+			width = width/2;
+			height = height/2;
+			multiplier = multiplier*2;
+			$('#zoom').val(multiplier);
+			$('#container').animate({
+				width:width
+			}, 500, function() {});
+			$('img').mapster('resize',width,height,500);
+		}
+		function bigger(){
+			width = width*2;
+			height = height*2;
+			multiplier = multiplier/2;
+			$('#zoom').val(multiplier);
+			$('#container').animate({
+				width:width
+			}, 500, function() {});
+			$('img').mapster('resize',width,height,500);
+		}
+	</script>
+	</head>
+	<body style="text-align:center;background-color:#eff0f2;font:12px Verdana;">
+		
+		<div id="container" style="max-width:100%; height:auto; margin:15px auto 15px auto;">
+		<!-- Pop-up -->
+    		<div id="overlay" onclick="ocultarPopup()"></div>
+    		<div id="popup">
+        		<span id="popup-texto"></span>
+    		</div>		
+		<script src="scripts.js"></script>
+			
+			<p style="font-size:20px;"></p>
+			<img id="picture" src="Hall 3A.png" id="picture" width="3425" style="border:1px solid blue;" usemap="#map"/>
+				<map name="map" id="map">	
+					<area alt="Micro Art Studio" title="Micro Art Studio" href="https://www.kickstarter.com/profile/microartstudio/created" coords="1006,399,1098,491" shape="rect">
+					<area alt="De Tinnen Roos" title="De Tinnen Roos" href="https://www.kickstarter.com/profile/247917105/created" coords="407,249,480,395" shape="rect">
+  					<area alt="Minis For War" title="Minis For War" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="384,403,484,464" shape="rect">
+					<area alt="Standi Sarl" title="Standi Sarl" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="576,273,672,342" shape="rect">
+  					<area alt="Lorescape" title="Lorescape" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="676,284,764,342" shape="rect">
+					<area alt="Wolff Designa" title="Wolff Designa" href="https://www.kickstarter.com/profile/wolffdesigna/created" coords="772,269,837,342" shape="rect">
+					<area alt="Warlord Games" title="Warlord Games" href="https://www.kickstarter.com/profile/warlordgames/created" coords="841,269,917,349" shape="rect">
+					<area alt="I built it" title="I built it" href="https://www.kickstarter.com/profile/ibuiltit/created" coords="914,273,990,342" shape="rect">
+					<area alt="Goblin Gaming" title="Goblin Gaming" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="994,269,1067,342" shape="rect">
+					<area alt="Gravity Bay" title="Gravity Bay" href="https://www.kickstarter.com/profile/gravitybay/created" coords="1071,269,1159,338" shape="rect">
+					<area alt="Tischlerei Collin" title="Tischlerei Collin" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1324,253,1558,342" shape="rect">
+					<area alt="Beckett Grading Games" title="Beckett Grading Games" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1850,246,2038,342" shape="rect">
+					<area alt="Gate to the Games" title="Gate to the Games" href="https://www.kickstarter.com/profile/neverrift/created" coords="2034,273,2123,342" shape="rect">
+					<area alt="4Play" title="4Play" href="https://www.kickstarter.com/profile/4play/created" coords="2123,273,2192,334" shape="rect">
+					<area alt="Mantic Games" title="Mantic Games" href="https://www.kickstarter.com/profile/manticgames/created" coords="2196,276,2261,345" shape="rect">
+					<area alt="Funtainment" title="Funtainment" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2272,253,2660,349" shape="rect">
+					<area alt="Spielezentrum" title="Spielezentrum" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2821,246,3140,476" shape="rect">
+					<area alt="Vallejo Hobby" title="Vallejo Hobby" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="557,403,745,491" shape="rect">
+					<area alt="AK Interactive" title="AK Interactive" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="802,395,948,487" shape="rect">
+					<area alt="mediknight" title="mediknight" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1105,407,1175,487" shape="rect">
+  					<area alt="Nerdlab Games" title="Nerdlab Games" href="https://www.kickstarter.com/profile/nerdlab-games/created" coords="1278,403,1424,487" shape="rect">
+					<area alt="Three for one" title="Three for one" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1436,399,1558,487" shape="rect">
+					<area alt="Dragon Shield" title="Dragon Shield" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1620,399,1850,491" shape="rect">
+					<area alt="Ultra Pro" title="Ultra Pro" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1900,399,2084,495" shape="rect">
+					<area alt="Metwabe" title="Metwabe" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2146,403,2219,495" shape="rect">
+					<area alt="TheDiceShopOnline" title="TheDiceShopOnline" href="https://www.kickstarter.com/profile/tdso1/created" coords="2222,453,2445,491" shape="rect">
+					<area alt="Mojo Cards" title="Mojo Cards" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2226,395,2445,441" shape="rect">
+					<area alt="Metalmotte" title="Metalmotte" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2453,403,2503,487" shape="rect">
+					<area alt="Q Workshop" title="Q Workshop" href="https://www.kickstarter.com/profile/q-workshop/created" coords="2556,399,2695,495" shape="rect">
+					<area alt="Artis Opus" title="Artis Opus" href="https://www.kickstarter.com/profile/artis-opus/created" coords="392,580,468,775" shape="rect">
+					<area alt="Dwarven Forge" title="Dwarven Forge" href="https://www.kickstarter.com/profile/dwarvenforge/created" coords="537,564,725,603" shape="rect">
+					<area alt="GamerGrass" title="GamerGrass" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="541,610,718,683" shape="rect">
+					<area alt="Asmodee" title="Asmodee" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="802,568,1205,879" shape="rect">
+					<area alt="Gamegenic" title="Gamegenic" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1282,572,1482,856" shape="rect">
+					<area alt="Blackfire" title="Blackfire" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1535,576,1850,864" shape="rect">
+					<area alt="Konami Digital" title="Konami Digital" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1904,560,2203,649" shape="rect">
+					<area alt="Flesh and Blood" title="Flesh and Blood" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1896,710,2084,875" shape="rect">
+					<area alt="Rok Games" title="Rok Games" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2146,706,2203,879" shape="rect">
+					<area alt="The Army Painter" title="The Army Painter" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2249,564,2449,672" shape="rect">
+					<area alt="Erik's Cuirosa" title="Erik's Cuirosa" href="https://www.kickstarter.com/profile/sorcerytcg/created" coords="2265,729,2445,875" shape="rect">
+					<area alt="Kraken" title="Kraken" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2499,572,2695,695" shape="rect">
+					<area alt="System Matters Verlag" title="System Matters Verlag" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2510,760,2625,864" shape="rect">
+					<area alt="Ulisses Medien" title="Ulisses Medien" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2760,580,2936,768" shape="rect">
+					<area alt="Feldherr" title="Feldherr" href="https://www.kickstarter.com/profile/feldherr/created" coords="415,772,468,844" shape="rect">
+					<area alt="Corvus Belli" title="Corvus Belli" href="https://www.kickstarter.com/profile/corvusbelli/created" coords="537,779,733,867" shape="rect">
+					<area alt="Takkure" title="Takkure" href="https://www.kickstarter.com/profile/sparco/created" coords="411,856,472,944" shape="rect">
+					<area alt="Safe and Sound" title="Safe and Sound" href="https://www.kickstarter.com/profile/859660495/created" coords="376,956,461,1021" shape="rect">
+					<area alt="Battle Systems" title="Battle Systems" href="https://www.kickstarter.com/profile/battlesystems/created" coords="549,960,714,994" shape="rect">
+					<area alt="Deep-cut Studio" title="Deep-cut Studio" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="549,998,714,1163" shape="rect">
+					<area alt="Archon Studio" title="Archon Studio" href="https://www.kickstarter.com/profile/archonstudio/created" coords="791,948,1201,1155" shape="rect">
+					<area alt="Pokémon" title="Pokémon" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1270,948,1666,1132" shape="rect">
+					<area alt="BenAD" title="BenAD" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="1712,948,1858,1136" shape="rect">
+  					<area alt="Playmats.eu" title="Playmats.eu" href="https://www.kickstarter.com/profile/playmats/created" coords="1919,956,2000,1125" shape="rect">
+					<area alt="J.K. entertainment" title="J.K. entertainment" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2057,952,2146,1132" shape="rect">
+					<area alt="Ultimate Guard" title="Ultimate Guard" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2203,956,2403,1125" shape="rect">
+					<area alt="Comic Planet" title="Comic Planet" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2464,1013,2526,1082" shape="rect">
+					<area alt="Absolute Objective" title="Absolute Objective" href="https://www.kickstarter.com/profile/absolute-objective/created" coords="2464,1102,2522,1186" shape="rect">
+					<area alt="Leuchtturm Gruppe" title="Leuchtturm Gruppe" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2503,967,2741,1009" shape="rect">
+					<area alt="Golden Demon" title="Golden Demon" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="537,1232,1178,1443" shape="rect">
+					<area alt="Titan Forge" title="Titan Forge" href="https://www.kickstarter.com/profile/1693348960/created" coords="1505,1205,2211,1244" shape="rect">
+					<area alt="Krautcover" title="Krautcover" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="2280,1194,2460,1244" shape="rect">
+					<area alt="Warlord Games" title="Warlord Games" href="https://www.kickstarter.com/profile/warlordgames/created" coords="392,1374,468,1558" shape="rect">
+					<area alt="Freebooter Miniatures" title="Freebooter Miniatures" href="https://www.kickstarter.com/profile/freebooter-legends-2/created" coords="545,1520,768,1551" shape="rect">
+					<area alt="Game Toppers" title="Game Toppers" href="https://www.kickstarter.com/profile/burky/created" coords="775,1516,867,1597" shape="rect">
+					<area alt="Enhance Gaming" title="Enhance Gaming" href="javascript:void(0)" onclick="mostrarPopup('No results found')" coords="871,1516,1163,1589" shape="rect">
+					
+					
+														
+					</map>
+			</div>
+			</p>
+
+</html>
